@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* my style */
+.nav__items a {
+  @apply hover:opacity-60 transition-opacity;
+}
+.card {
+  @apply bg-zinc-700 hover:translate-y-1 cursor-grab transition-transform m-3 flex md:flex-row flex-col md:w-[600px]  w-10/12 rounded-xl;
+}
+
+.card__img {
+  @apply rounded-t-xl md:rounded-tr-none md:rounded-bl-xl object-center object-cover w-full h-full;
+}
+
+.select__list {
+  @apply bg-transparent cursor-pointer border-yellow-500 border-2 rounded p-1 text-yellow-500;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+/* loading spinner */
+.loader {
+  position: absolute;
+  left: 47%;
+  width: 48px;
+  height: 48px;
+  border: 5px dotted rgb(218, 179, 72);
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* lazysizes package */
+.blur-up {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  transition: filter 400ms, -webkit-filter 400ms;
+  opacity: 0;
+}
+
+.blur-up.lazyloaded {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+  opacity: 1;
+}
